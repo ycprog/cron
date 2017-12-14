@@ -282,7 +282,7 @@ func (t testJob) Run() {
 // Test that adding an invalid job spec returns an error
 func TestInvalidJobSpec(t *testing.T) {
 	cron := New()
-	err := cron.AddJob("this will not parse", nil)
+	_, err := cron.AddJob("this will not parse", nil)
 	if err == nil {
 		t.Errorf("expected an error with invalid spec, got nil")
 	}
